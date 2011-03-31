@@ -1,0 +1,31 @@
+<% title "Contatos" %>
+<%=render :file => 'layouts/_search.html.erb'%><br>
+<br>
+<table>
+  <tr>
+    <th>Contato</th>
+    <th>Empresa</th>
+    <th>Cargo</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Cidade</th>
+  </tr>
+  <% for card in @cards %>
+    <tr>
+      <td><%= card.contact %></td>
+      <td><%= card.company %></td>
+      <td><%= card.position %></td>
+      <td><%= card.email %></td>
+      <td><%= card.phone %></td>
+      <td><%= card.city %></td>
+      <td><%= link_to "Mostrar", card %></td>
+      <td><%= link_to "Editar", edit_card_path(card) %></td>
+      <td><%= link_to "Deletar", card, :confirm => 'Tem certeza?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<p>
+	<center><%= will_paginate @cards %>	</center>
+</p>
+
+<p><%= link_to "+ Adicionar Novo", new_card_path %></p>

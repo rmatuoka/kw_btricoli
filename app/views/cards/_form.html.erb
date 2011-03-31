@@ -1,0 +1,28 @@
+<%= form_for @card do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :Contato %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :Empresa %><br />
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label :Cargo %><br />
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    <%= f.label :Email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :Telefone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :Cidade %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

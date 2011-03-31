@@ -1,0 +1,32 @@
+<% title "Contatos" %>
+
+<p>
+  <strong>Contato:</strong>
+  <%= @card.contact %>
+</p>
+<p>
+  <strong>Empresa:</strong>
+  <%= @card.company %>
+</p>
+<p>
+  <strong>Cargo:</strong>
+  <%= @card.position %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @card.email %>
+</p>
+<p>
+  <strong>Telefone:</strong>
+  <%= @card.phone %>
+</p>
+<p>
+  <strong>Cidade:</strong>
+  <%= @card.city %>
+</p>
+
+<p>
+  <%= link_to "Editar", edit_card_path(@card) %> |
+  <%= link_to "Deletar", @card, :confirm => 'Tem certeza?', :method => :delete %> |
+  <%= link_to "Mostrar Todos", cards_path %>
+</p>

@@ -1,0 +1,15 @@
+one:
+  contact: MyString
+  company: MyString
+  position: MyString
+  email: MyString
+  phone: MyString
+  city: MyString
+
+two:
+  contact: MyString
+  company: MyString
+  position: MyString
+  email: MyString
+  phone: MyString
+  city: MyString

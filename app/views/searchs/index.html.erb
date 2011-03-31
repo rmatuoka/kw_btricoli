@@ -1,0 +1,24 @@
+<% title "Busca" %>
+
+<%=render :file => 'layouts/_search.html.erb'%><br>
+
+<%if !@Results.blank?%>
+	<h2>Busca por: <%=params[:keyword]%></h2>
+	<%=page_entries_info @Results %><br>
+	<br>
+	<table>
+	<%@Results.each do |r| %>
+		<tr>
+			<td>	
+			<%=r.company%> - 
+			<%= link_to "Mostrar", r %> | 
+			<%= link_to "Editar", edit_card_path(r) %> | 
+			<%= link_to "Deletar", r, :confirm => 'Tem certeza?', :method => :delete %>
+			</td>
+		</tr>
+
+	<%end%>
+	</table>
+	
+	<%= will_paginate @Results %>
+<%end%>

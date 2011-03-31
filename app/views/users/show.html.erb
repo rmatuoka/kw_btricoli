@@ -1,0 +1,15 @@
+<% title "Usuário" %>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <%= link_to "Editar", edit_user_path(@user) %> |
+  <%= link_to "Deletar", @user, :confirm => 'Tem certeza?', :method => :delete %>
+</p>
