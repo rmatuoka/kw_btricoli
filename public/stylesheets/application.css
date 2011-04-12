@@ -98,7 +98,7 @@ tr:hover
 }
 
 .error_messages {
-  width: 400px;
+  width: 70%;
   border: 2px solid #CF0000;
   padding: 0px;
   padding-bottom: 12px;
