@@ -7,10 +7,10 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2'
 gem "nifty-generators", :group => :development
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem 'acl9', '0.12'
+#gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+#gem 'acl9', '0.12'
 gem 'mongrel'
-gem 'scoped_search'
+#gem 'scoped_search'
 gem 'will_paginate'
 
 # Use unicorn as the web server
