@@ -40,6 +40,11 @@ th
 	background-color:#e4e4e4;
 }
 
+table
+{
+	width:100%;
+}
+
 tr:hover
 {
 	background-color:#e4e4e4;
