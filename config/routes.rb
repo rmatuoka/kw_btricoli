@@ -9,7 +9,7 @@ KwBtricoli::Application.routes.draw do
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   
-  root :to => "cards#index"
+  root :to => "searchs#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
