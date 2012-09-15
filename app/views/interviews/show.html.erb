@@ -1,0 +1,25 @@
+<% title "Interview" %>
+
+<p>
+  <strong>Entrevistador:</strong>
+  <%= @interview.entrevistador %>
+</p>
+<p>
+  <strong>Data:</strong>
+  <%= @interview.data %>
+</p>
+<p>
+  <strong>Ausente:</strong>
+  <%= @interview.ausente %>
+</p>
+<p>
+  <strong>Recusou:</strong>
+  <%= @interview.recusou %>
+</p>
+<p>
+  <strong>Nome:</strong>
+  <%= @interview.nome %>
+</p>
+
+  <%= link_to "View All", interviews_path %>
+</p>

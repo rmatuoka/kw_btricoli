@@ -12,7 +12,8 @@
 	  <% if current_user %>
 		<%=link_to "Administrar Contatos", cards_path%> | 
 		<%=link_to "Buscar Contatos", searchs_path%> |
-	    <%= link_to "Editar", edit_user_path(:current) %> |
+		<%=link_to "Pesquisa", interviews_path%> | 
+	    <%= link_to "Meus Dados", edit_user_path(:current) %> |
 	    <%= link_to "Logout", logout_path %> 
 	    <span>Bem vindo <strong><%= current_user.username %></strong>!</span>
 	  <% else %>

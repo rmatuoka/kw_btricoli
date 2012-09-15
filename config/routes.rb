@@ -1,8 +1,13 @@
 KwBtricoli::Application.routes.draw do
+  
+  resources (:interviews) do
+    collection do
+      get 'ausentes'
+      post 'ausentes'
+    end
+  end
   resources :cards
-
   resources :user_sessions
-
   resources :users
   resources :searchs
   

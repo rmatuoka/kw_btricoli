@@ -1,0 +1,321 @@
+<%= form_for @interview do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :entrevistador, "Nome do Entervistador" %><br />
+    <%= f.text_field :entrevistador %>
+  </p>
+  <p>
+    <%= f.label :data, "Data da Entrevista" %><br />
+    <%= f.date_select :data %>
+  </p>
+  <p>
+    <%= f.label :ausente, "Ausente?" %><br />
+    <%= f.check_box :ausente %>
+  </p>
+  <p>
+    <%= f.label :recusou, "Recusou?" %><br />
+    <%= f.check_box :recusou %>
+  </p>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :profissao, "Profissão" %><br />
+	    <%= f.text_field :profissao %>
+  </p>
+  <p>
+    <%= f.label :escolaridade %><br />
+    <%= f.text_field :escolaridade %>
+  </p>
+  <p>
+    <%= f.label :endereco, "Endereço" %><br />
+    <%= f.text_field :endereco %>
+  </p>
+  <p>
+    <%= f.label :bairro %><br />
+    <%= f.text_field :bairro %>
+  </p>
+  <p>
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </p>
+  <p>
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter %>
+  </p>
+  <p>
+    <%= f.label :datanascimento, "Data de Nascimento" %><br />
+    <%= f.date_select :datanascimento %>
+  </p>
+  <p>
+    <%= f.label :membros18 %><br />
+    <%= f.text_field :membros18 %>
+  </p>
+
+<h2>Dos itens abaixo, nos diga o que mais interfere em sua vida:</h2>
+  <p>
+    <%= f.check_box :asfalto_1 %>
+	<%= f.label :asfalto_1, "Asfalto" %>
+    
+  </p>
+  <p>
+<%= f.check_box :desemprego_1 %>    
+<%= f.label :desemprego_1, "Desemprego" %>
+    
+  </p>
+  <p>
+<%= f.check_box :educacao_1 %>    
+<%= f.label :educacao_1, "Educação" %>
+    
+  </p>
+  <p>
+    <%= f.check_box :enchentes_1 %>
+    <%= f.label :enchentes_1, "Enchentes" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :lazer_1 %>
+    <%= f.label :lazer_1, "Lazer" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :mobilidade_1 %>
+    <%= f.label :mobilidade_1, "Mobilidade" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :saneamento_1 %>
+    <%= f.label :saneamento_1, "Saneamento" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :saude_1 %>
+    <%= f.label :saude_1, "Saúde" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :seguranca_1 %>
+    <%= f.label :seguranca_1, "Segurança" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :trafico_1 %>
+    <%= f.label :trafico_1, "Tráfico de Drogas" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :transito_1 %>
+    <%= f.label :transito_1, "Trânsito" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :transporte_1 %>
+    <%= f.label :transporte_1, "Transportes" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :nda_1 %>
+    <%= f.label :nda_1, "NDA" %><br />
+
+  </p>
+  <p>
+    <%= f.label :outros_1, "Outros" %><br />
+    <%= f.text_field :outros_1 %>
+  </p>
+
+<h2>Dos itens abaixo, nos diga qual (is) mais impactam o seu bairro?</h2>
+  <p>
+    <%= f.check_box :asfalto_2 %>
+    <%= f.label :asfalto_2, "Asfalto" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :desemprego_2 %>
+    <%= f.label :desemprego_2, "Desemprego" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :educacao_2 %>
+    <%= f.label :educacao_2, "Educação" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :enchentes_2 %>
+    <%= f.label :enchentes_2, "Enchentes" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :lazer_2 %>
+    <%= f.label :lazer_2, "Lazer" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :mobilidade_2 %>
+    <%= f.label :mobilidade_2, "Mobilidade" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :saneamento_2 %>
+    <%= f.label :saneamento_2, "Saneamento" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :saude_2 %>
+    <%= f.label :saude_2, "Saúde" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :seguranca_2 %>
+    <%= f.label :seguranca_2, "Segurança" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :trafico_2 %>
+    <%= f.label :trafico_2, "Tráfico de Drogas" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :transito_2 %>
+    <%= f.label :transito_2, "Trânsito" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :transporte_2 %>
+    <%= f.label :transporte_2, "Transporte" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :nda_2 %>
+    <%= f.label :nda_2, "NDA" %><br />
+
+  </p>
+  <p>
+    <%= f.label :outros_2, "Outros" %><br />
+    <%= f.text_field :outros_2 %>
+  </p>
+
+
+  <h2>E para Atibaia, o que deve ser feito com urgência na sua opinião?</h2>
+  <p>
+    <%= f.check_box :asfalto_3 %>
+    <%= f.label :asfalto_3, "Asfalto" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :desemprego_3 %>
+    <%= f.label :desemprego_3, "Desemprego" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :educacao_3 %>
+    <%= f.label :educacao_3, "Educação" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :enchentes_3 %>
+    <%= f.label :enchentes_3, "Enchentes" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :lazer_3 %>
+    <%= f.label :lazer_3, "Lazer" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :mobilidade_3 %>
+    <%= f.label :mobilidade_3, "Mobilidade" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :saneamento_3 %>
+    <%= f.label :saneamento_3, "Saneamento" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :saude_3 %>
+    <%= f.label :saude_3, "Saúde" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :seguranca_3 %>
+    <%= f.label :seguranca_3, "Segurança" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :trafico_3 %>
+    <%= f.label :trafico_3, "Tráfico de Drogas" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :transito_3 %>
+    <%= f.label :transito_3, "Trânsito" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :transporte_3%>
+    <%= f.label :transporte_3, "Transporte"  %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :nda_3 %>
+    <%= f.label :nda_3, "NDA" %><br />
+
+  </p>
+  <p>
+    <%= f.label :outros_3, "Outros" %><br />
+    <%= f.text_field :outros_3 %>
+  </p>
+
+  <h2>Se a eleição fosse hoje, em quem você votaria para prefeito?</h2>
+  <p>
+    <%= f.check_box :saulo_4 %>
+    <%= f.label :saulo_4, "Saulo" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :wanderley_4 %>
+    <%= f.label :wanderley_4, "Prof. Wanderley" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :luiz_4 %>
+    <%= f.label :luiz_4, "Luiz Fernando" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :arthur_4 %>
+    <%= f.label :arthur_4, "Promotor Arthur" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :nulo_4 %>
+    <%= f.label :nulo_4, "Nulo/Branco" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :indeciso_4 %>
+    <%= f.label :indeciso_4, "Indeciso" %><br />
+
+  </p>
+  <p>
+    <%= f.check_box :naorespondeu_4 %>
+    <%= f.label :naorespondeu_4, "Não Respondeu" %><br />
+
+  </p>
+
+<h2>Deixe uma mensagem para o candidato Luiz Fernando:</h2>
+  <p>
+    <%= f.label :mensagem_5, "Mensagem" %><br />
+    <%= f.text_area :mensagem_5 %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
