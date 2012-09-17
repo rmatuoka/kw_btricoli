@@ -4,6 +4,8 @@ KwBtricoli::Application.routes.draw do
     collection do
       get 'ausentes'
       post 'ausentes'
+      get 'reports'
+      post 'reports'
     end
   end
   resources :cards
