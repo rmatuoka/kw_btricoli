@@ -66,20 +66,20 @@ class InterviewsController < ApplicationController
                     @total_nda1 + @total_outros1
     
     #PERCENTAGEM
-    @perc_asfalto1 = (@total_asfalto1 / @total_final1) * 100
-    @perc_desemprego1 = (@total_desemprego1 / @total_final1) * 100
-    @perc_educacao1 = (@total_educacao1 / @total_final1) * 100
-    @perc_enchentes1 = (@total_enchentes1 / @total_final1) * 100
-    @perc_lazer1 = (@total_lazer1 / @total_final1) * 100
-    @perc_mobilidade1 = (@total_mobilidade1 / @total_final1) * 100
-    @perc_saneamento1 = (@total_saneamento1 / @total_final1) * 100
-    @perc_saude1 = (@total_saude1 / @total_final1) * 100
-    @perc_seguranca1 = (@total_seguranca1 / @total_final1) * 100
-    @perc_trafico1 = (@total_trafico1 / @total_final1) * 100
-    @perc_transito1 = (@total_transito1 / @total_final1) * 100
-    @perc_transporte1 = (@total_transporte1 / @total_final1) * 100
-    @perc_nda1 = (@total_nda1 / @total_final1) * 100
-    @perc_outros1 = (@total_outros1 / @total_final1) * 100
+    @perc_asfalto1 = ((@total_asfalto1 / @total_final1) * 100).round(2)
+    @perc_desemprego1 = ((@total_desemprego1 / @total_final1) * 100).round(2)
+    @perc_educacao1 = ((@total_educacao1 / @total_final1) * 100).round(2)
+    @perc_enchentes1 = ((@total_enchentes1 / @total_final1) * 100).round(2)
+    @perc_lazer1 = ((@total_lazer1 / @total_final1) * 100).round(2)
+    @perc_mobilidade1 = ((@total_mobilidade1 / @total_final1) * 100).round(2)
+    @perc_saneamento1 = ((@total_saneamento1 / @total_final1) * 100).round(2)
+    @perc_saude1 = ((@total_saude1 / @total_final1) * 100).round(2)
+    @perc_seguranca1 = ((@total_seguranca1 / @total_final1) * 100).round(2)
+    @perc_trafico1 = ((@total_trafico1 / @total_final1) * 100).round(2)
+    @perc_transito1 = ((@total_transito1 / @total_final1) * 100).round(2)
+    @perc_transporte1 = ((@total_transporte1 / @total_final1) * 100).round(2)
+    @perc_nda1 = ((@total_nda1 / @total_final1) * 100).round(2)
+    @perc_outros1 = ((@total_outros1 / @total_final1) * 100).round(2)
     
     #QUESTOES 2
     @total_asfalto2 = Interview.sum(:asfalto_2).to_f
@@ -101,20 +101,20 @@ class InterviewsController < ApplicationController
                     @total_saneamento2 + @total_saude2 + @total_seguranca2 + @total_trafico2 + @total_transito2 + @total_transporte2 +
                     @total_nda2 + @total_outros2
                     
-    @perc_asfalto2 = (@total_final2 != 0) ? ((@total_asfalto2 / @total_final2) * 100) : 0
-    @perc_desemprego2 = (@total_final2 != 0) ? ((@total_desemprego2 / @total_final2) * 100) : 0
-    @perc_educacao2 = (@total_final2 != 0) ? ((@total_educacao2 / @total_final2) * 100) : 0
-    @perc_enchentes2 = (@total_final2 != 0) ? ((@total_enchentes2 / @total_final2) * 100) : 0
-    @perc_lazer2 = (@total_final2 != 0) ? ((@total_lazer2 / @total_final2) * 100) : 0
-    @perc_mobilidade2 = (@total_final2 != 0) ? ((@total_mobilidade2 / @total_final2) * 100) : 0
-    @perc_saneamento2 = (@total_final2 != 0) ? ((@total_saneamento2 / @total_final2) * 100) : 0
-    @perc_saude2 = (@total_final2 != 0) ? ((@total_saude2 / @total_final2) * 100) : 0
-    @perc_seguranca2 = (@total_final2 != 0) ? ((@total_seguranca2 / @total_final2) * 100) : 0
-    @perc_trafico2 = (@total_final2 != 0) ? ((@total_trafico2 / @total_final2) * 100) : 0
-    @perc_transito2 = (@total_final2 != 0) ? ((@total_transito2 / @total_final2) * 100) : 0
-    @perc_transporte2 = (@total_final2 != 0) ? ((@total_transporte2 / @total_final2) * 100) : 0
-    @perc_nda2 = (@total_final2 != 0) ? ((@total_nda2 / @total_final2) * 100) : 0
-    @perc_outros2 = (@total_final2 != 0) ? ((@total_outros2 / @total_final2) * 100) : 0
+    @perc_asfalto2 = (@total_final2 != 0) ? ((@total_asfalto2 / @total_final2) * 100).round(2) : 0
+    @perc_desemprego2 = (@total_final2 != 0) ? ((@total_desemprego2 / @total_final2) * 100).round(2) : 0
+    @perc_educacao2 = (@total_final2 != 0) ? ((@total_educacao2 / @total_final2) * 100).round(2) : 0
+    @perc_enchentes2 = (@total_final2 != 0) ? ((@total_enchentes2 / @total_final2) * 100).round(2) : 0
+    @perc_lazer2 = (@total_final2 != 0) ? ((@total_lazer2 / @total_final2) * 100).round(2) : 0
+    @perc_mobilidade2 = (@total_final2 != 0) ? ((@total_mobilidade2 / @total_final2) * 100).round(2) : 0
+    @perc_saneamento2 = (@total_final2 != 0) ? ((@total_saneamento2 / @total_final2) * 100).round(2) : 0
+    @perc_saude2 = (@total_final2 != 0) ? ((@total_saude2 / @total_final2) * 100).round(2) : 0
+    @perc_seguranca2 = (@total_final2 != 0) ? ((@total_seguranca2 / @total_final2) * 100).round(2) : 0
+    @perc_trafico2 = (@total_final2 != 0) ? ((@total_trafico2 / @total_final2) * 100).round(2) : 0
+    @perc_transito2 = (@total_final2 != 0) ? ((@total_transito2 / @total_final2) * 100).round(2) : 0
+    @perc_transporte2 = (@total_final2 != 0) ? ((@total_transporte2 / @total_final2) * 100).round(2) : 0
+    @perc_nda2 = (@total_final2 != 0) ? ((@total_nda2 / @total_final2) * 100).round(2) : 0
+    @perc_outros2 = (@total_final2 != 0) ? ((@total_outros2 / @total_final2) * 100).round(2) : 0
     
     #QUESTOES 3
     @total_asfalto3 = Interview.sum(:asfalto_3).to_f
@@ -136,20 +136,20 @@ class InterviewsController < ApplicationController
                     @total_saneamento3 + @total_saude3 + @total_seguranca3 + @total_trafico3 + @total_transito3 + @total_transporte3 +
                     @total_nda3 + @total_outros3
                     
-    @perc_asfalto3 = (@total_final3 != 0) ? ((@total_asfalto3 / @total_final3) * 100) : 0
-    @perc_desemprego3 = (@total_final3 != 0) ? ((@total_desemprego3 / @total_final3) * 100) : 0
-    @perc_educacao3 = (@total_final3 != 0) ? ((@total_educacao3 / @total_final3) * 100) : 0
-    @perc_enchentes3 = (@total_final3 != 0) ? ((@total_enchentes3 / @total_final3) * 100) : 0
-    @perc_lazer3 = (@total_final3 != 0) ? ((@total_lazer3 / @total_final3) * 100) : 0
-    @perc_mobilidade3 = (@total_final3 != 0) ? ((@total_mobilidade3 / @total_final3) * 100) : 0
-    @perc_saneamento3 = (@total_final3 != 0) ? ((@total_saneamento3 / @total_final3) * 100) : 0
-    @perc_saude3 = (@total_final3 != 0) ? ((@total_saude3 / @total_final3) * 100) : 0
-    @perc_seguranca3 = (@total_final3 != 0) ? ((@total_seguranca3 / @total_final3) * 100) : 0
-    @perc_trafico3 = (@total_final3 != 0) ? ((@total_trafico3 / @total_final3) * 100) : 0
-    @perc_transito3 = (@total_final3 != 0) ? ((@total_transito3 / @total_final3) * 100) : 0
-    @perc_transporte3 = (@total_final3 != 0) ? ((@total_transporte3 / @total_final3) * 100) : 0
-    @perc_nda3 = (@total_final3 != 0) ? ((@total_nda3 / @total_final3) * 100) : 0
-    @perc_outros3 = (@total_final3 != 0) ? ((@total_outros3 / @total_final3) * 100) : 0
+    @perc_asfalto3 = (@total_final3 != 0) ? ((@total_asfalto3 / @total_final3) * 100).round(2) : 0
+    @perc_desemprego3 = (@total_final3 != 0) ? ((@total_desemprego3 / @total_final3) * 100).round(2) : 0
+    @perc_educacao3 = (@total_final3 != 0) ? ((@total_educacao3 / @total_final3) * 100).round(2) : 0
+    @perc_enchentes3 = (@total_final3 != 0) ? ((@total_enchentes3 / @total_final3) * 100).round(2) : 0
+    @perc_lazer3 = (@total_final3 != 0) ? ((@total_lazer3 / @total_final3) * 100).round(2) : 0
+    @perc_mobilidade3 = (@total_final3 != 0) ? ((@total_mobilidade3 / @total_final3) * 100).round(2) : 0
+    @perc_saneamento3 = (@total_final3 != 0) ? ((@total_saneamento3 / @total_final3) * 100).round(2) : 0
+    @perc_saude3 = (@total_final3 != 0) ? ((@total_saude3 / @total_final3) * 100).round(2) : 0
+    @perc_seguranca3 = (@total_final3 != 0) ? ((@total_seguranca3 / @total_final3) * 100).round(2) : 0
+    @perc_trafico3 = (@total_final3 != 0) ? ((@total_trafico3 / @total_final3) * 100).round(2) : 0
+    @perc_transito3 = (@total_final3 != 0) ? ((@total_transito3 / @total_final3) * 100).round(2) : 0
+    @perc_transporte3 = (@total_final3 != 0) ? ((@total_transporte3 / @total_final3) * 100).round(2) : 0
+    @perc_nda3 = (@total_final3 != 0) ? ((@total_nda3 / @total_final3) * 100).round(2) : 0
+    @perc_outros3 = (@total_final3 != 0) ? ((@total_outros3 / @total_final3) * 100).round(2) : 0
     
     #QUESTOES 4
     @total_saulo = Interview.sum(:saulo_4).to_f
@@ -163,13 +163,13 @@ class InterviewsController < ApplicationController
     
     @total_final4 = @total_saulo + @total_wanderley + @total_luiz + @total_arthur + @total_nulo + @total_indeciso + @total_naorespondeu
                     
-    @perc_saulo = (@total_final4 != 0) ? ((@total_saulo / @total_final4) * 100) : 0
-    @perc_wanderley = (@total_final4 != 0) ? ((@total_wanderley / @total_final4) * 100) : 0
-    @perc_luiz = (@total_final4 != 0) ? ((@total_luiz / @total_final4) * 100) : 0
-    @perc_arthur = (@total_final4 != 0) ? ((@total_arthur / @total_final4) * 100) : 0
-    @perc_nulo = (@total_final4 != 0) ? ((@total_nulo / @total_final4) * 100) : 0
-    @perc_indeciso = (@total_final4 != 0) ? ((@total_indeciso / @total_final4) * 100) : 0
-    @perc_naorespondeu = (@total_final4 != 0) ? ((@total_naorespondeu / @total_final4) * 100) : 0
+    @perc_saulo = (@total_final4 != 0) ? ((@total_saulo / @total_final4) * 100).round(2) : 0
+    @perc_wanderley = (@total_final4 != 0) ? ((@total_wanderley / @total_final4) * 100).round(2) : 0
+    @perc_luiz = (@total_final4 != 0) ? ((@total_luiz / @total_final4) * 100).round(2) : 0
+    @perc_arthur = (@total_final4 != 0) ? ((@total_arthur / @total_final4) * 100).round(2) : 0
+    @perc_nulo = (@total_final4 != 0) ? ((@total_nulo / @total_final4) * 100).round(2) : 0
+    @perc_indeciso = (@total_final4 != 0) ? ((@total_indeciso / @total_final4) * 100).round(2) : 0
+    @perc_naorespondeu = (@total_final4 != 0) ? ((@total_naorespondeu / @total_final4) * 100).round(2) : 0
 
   end
 end
