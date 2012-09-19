@@ -45,27 +45,7 @@ class InterviewsController < ApplicationController
   end
   
   def reports
-    respond_to do |format|
-        format.html
-        format.pdf do
-          
-          d = DateTime.now.strftime("%d-%m-%Y")
-          render  :pdf => "Pesquisa", 
-                  :template => "/interviews/reports.pdf.erb",
-                  :show_as_html => params[:debug].present?,
-                  :margin => {:top                => 15,                     # default 10 (mm)
-                              :bottom             => 15,
-                              :left               => 10,
-                              :right              => 10},                  
-                  :page_size => 'A4'#,
-                 # :header => {:html => { :template => '/static_content/denied.html.erb',  # use :template OR :url      # optional, use 'pdf_plain.html' for a pdf_plain.html.erb file, defaults to main layout
-                  #                       :url      => 'www.example.com',
-                   #                      :locals   => { :foo => @bar }
-                    #                   },
-                     #         }                  
-                  
-        end
-    end
+    
     
     #FILTROS
     @breadcrumb = "Todos o bairros"
@@ -215,6 +195,26 @@ class InterviewsController < ApplicationController
     @perc_positivo = (@total_final5 != 0) ? ((@total_positivo / @total_final5) * 100).round(2) : 0
     @perc_negativo = (@total_final5 != 0) ? ((@total_negativo / @total_negativo) * 100).round(2) : 0
     
-    
+    respond_to do |format|
+        format.html
+        format.pdf do
+          
+          d = DateTime.now.strftime("%d-%m-%Y")
+          render  :pdf => "Pesquisa", 
+                  :template => "/interviews/reports.pdf.erb",
+                  :show_as_html => params[:debug].present?,
+                  :margin => {:top                => 15,                     # default 10 (mm)
+                              :bottom             => 15,
+                              :left               => 10,
+                              :right              => 10},                  
+                  :page_size => 'A4'#,
+                 # :header => {:html => { :template => '/static_content/denied.html.erb',  # use :template OR :url      # optional, use 'pdf_plain.html' for a pdf_plain.html.erb file, defaults to main layout
+                  #                       :url      => 'www.example.com',
+                   #                      :locals   => { :foo => @bar }
+                    #                   },
+                     #         }                  
+                  
+        end
+    end
   end
 end
