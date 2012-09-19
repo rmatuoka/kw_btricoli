@@ -75,7 +75,9 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.25)
+    wicked_pdf (0.7.9)
     will_paginate (2.3.15)
+    wkhtmltopdf-binary (0.9.9.1)
 
 PLATFORMS
   ruby
@@ -86,4 +88,6 @@ DEPENDENCIES
   mysql2
   nifty-generators
   rails (= 3.0.3)
+  wicked_pdf
   will_paginate
+  wkhtmltopdf-binary

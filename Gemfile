@@ -12,6 +12,8 @@ gem "nifty-generators", :group => :development
 gem 'mongrel'
 #gem 'scoped_search'
 gem 'will_paginate'
+gem 'wicked_pdf'
+gem "wkhtmltopdf-binary"
 
 # Use unicorn as the web server
 # gem 'unicorn'
