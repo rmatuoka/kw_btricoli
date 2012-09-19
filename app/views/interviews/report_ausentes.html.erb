@@ -1,0 +1,26 @@
+<% title "Relatório de Ausentes" %>
+
+<%=link_to "Motrar todos", interviews_path%> | <%=link_to "Motrar ausentes", ausentes_interviews_path%> | Resumo
+
+<br><br>
+<h2>Filtros</h2>
+<%=form_tag "/interviews/report_ausentes", :method => :get%>
+	<label>Bairro:</label>
+	<%= collection_select nil, :bairro, @bairros, :bairro, :bairro,{:size=>"10"} %>
+	<br /><br />
+	<%=submit_tag "Filtrar"%>
+	<br />
+</form>
+
+<br /><br />
+
+<%=form_tag "/interviews/report_ausentes.pdf", :method => :get, :target=> "_blank"%>
+	<%=hidden_field_tag :bairro, params[:bairro]%>
+	<%=submit_tag "Gerar PDF"%>
+</form>
+
+<br /><br />
+
+<%=render :file => "/interviews/_resumo_ausentes.html.erb"%>
+
+<p><%= link_to "Voltar", interviews_path %></p>

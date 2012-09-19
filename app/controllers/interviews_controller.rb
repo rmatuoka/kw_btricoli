@@ -44,6 +44,44 @@ class InterviewsController < ApplicationController
     redirect_to interviews_url, :notice => "Item deletado com sucesso."
   end
   
+  def report_ausentes
+    #FILTROS
+    @breadcrumb = "Todos o bairros"
+    @breadcrumb = params[:bairro] if params[:utf8] != nil
+    
+    @bairros = Interview.all(:group => "bairro", :order => "bairro ASC")
+    @filtro_bairro = "%"
+    
+    if params[:utf8] != nil
+      @filtro_bairro = params[:bairro] if !params[:bairro].blank?
+    end
+    
+    @reports = Interview.all(:conditions => ["bairro LIKE ?", @filtro_bairro], :order => "bairro ASC")
+    
+    respond_to do |format|
+        format.html
+        format.pdf do
+          
+          d = DateTime.now.strftime("%d-%m-%Y")
+          render  :pdf => "Pesquisa", 
+                  :template => "/interviews/report_ausentes.pdf.erb",
+                  :show_as_html => params[:debug].present?,
+                  :margin => {:top                => 15,                     # default 10 (mm)
+                              :bottom             => 15,
+                              :left               => 10,
+                              :right              => 10},                  
+                  :page_size => 'A4'#,
+                 # :header => {:html => { :template => '/static_content/denied.html.erb',  # use :template OR :url      # optional, use 'pdf_plain.html' for a pdf_plain.html.erb file, defaults to main layout
+                  #                       :url      => 'www.example.com',
+                   #                      :locals   => { :foo => @bar }
+                    #                   },
+                     #         }                  
+                  
+        end
+    end
+    
+  end
+  
   def reports
     
     

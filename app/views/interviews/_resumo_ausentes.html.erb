@@ -1,0 +1,10 @@
+
+<%@reports.each do |r|%>
+	Bairro: <%=r.bairro%><br />
+	Endereço: <%=r.endereco%><br />
+	Telefone: <%=r.telefone%><br />
+	<hr>
+<%end%>
+
+<strong>Total</strong>: 
+<%=@reports.count%>
