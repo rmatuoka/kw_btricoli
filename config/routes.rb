@@ -8,6 +8,8 @@ KwBtricoli::Application.routes.draw do
       post 'reports'
       get 'report_ausentes'
       post 'report_ausentes'
+      get 'indecisos'
+      post 'indecisos'
     end
   end
   resources :cards

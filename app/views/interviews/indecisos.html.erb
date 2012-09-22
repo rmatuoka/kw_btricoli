@@ -1,14 +1,18 @@
-<% title "Relatório de Ausentes" %>
+<%content_for :head do%>
+	<%= wicked_pdf_stylesheet_link_tag "application" %>
+<%end%>
+
+<% title "Resumo da Pesquisa" %>
 
 <%=link_to "Motrar todos", interviews_path%> | 
 <%=link_to "Motrar ausentes", ausentes_interviews_path%> | 
 <%=link_to "Resumo", reports_interviews_path%> |
-Relatório de ausentes por bairro | 
-<%=link_to "Relatório de indecisos por bairro", indecisos_interviews_path%>
+<%=link_to "Relatório de ausentes por bairro", report_ausentes_interviews_path%> | 
+Relatório de indecisos por bairro
 
 <br><br>
 <h2>Filtros</h2>
-<%=form_tag "/interviews/report_ausentes", :method => :get%>
+<%=form_tag "/interviews/indecisos", :method => :get%>
 	<label>Bairro:</label>
 	<%= collection_select nil, :bairro, @bairros, :bairro, :bairro,{:size=>"10"} %>
 	<br /><br />
@@ -18,13 +22,13 @@ Relatório de ausentes por bairro |
 
 <br /><br />
 
-<%=form_tag "/interviews/report_ausentes.pdf", :method => :get, :target=> "_blank"%>
+<%=form_tag "/interviews/indecisos.pdf", :method => :get, :target=> "_blank"%>
 	<%=hidden_field_tag :bairro, params[:bairro]%>
 	<%=submit_tag "Gerar PDF"%>
 </form>
 
 <br /><br />
 
-<%=render :file => "/interviews/_resumo_ausentes.html.erb"%>
+<%=render :file => "/interviews/_resumo_indecisos.html.erb"%>
 
 <p><%= link_to "Voltar", interviews_path %></p>
