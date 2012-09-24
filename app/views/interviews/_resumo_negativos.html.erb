@@ -1,0 +1,13 @@
+
+<%@reports.each do |r|%>
+	Data: <%=r.data%><br />
+	Entrevistador: <%=r.entrevistador%><br />
+	Bairro: <%=r.bairro%><br />
+	Endereço: <%=r.endereco%><br />
+	Telefone: <%=r.telefone%><br />
+	Comentário: <%=r.mensagem_5%><br />
+	<hr>
+<%end%>
+
+<strong>Total</strong>: 
+<%=@reports.count%>

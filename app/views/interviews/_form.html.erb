@@ -318,8 +318,14 @@
     <%= f.text_area :mensagem_5 %>
   </p>
 
-  	<%= f.check_box :positivo %>
-    <%= f.label :positivo, "Este feedback é positivo!" %><br />
+  	<%= f.radio_button :positivo, "1" %>
+    <%= f.label :positivo, "Positivo" %><br />
+
+	<%= f.radio_button :positivo, "0" %>
+    <%= f.label :positivo, "Negativo" %><br />
+
+	<%= f.radio_button :positivo, "2" %>
+    <%= f.label :positivo, "Neutro" %><br />
 
   <p><%= f.submit %></p>
 <% end %>
