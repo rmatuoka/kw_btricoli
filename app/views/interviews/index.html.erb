@@ -10,6 +10,9 @@ Mostrar todos |
 
 <p><%= link_to "Criar nova", new_interview_path %></p>
 
+<br><br>
+<b>Total:</b> <%=@interviews.count%>
+<br><br>
 <table>
   <tr>
     <th>Entrevistador</th>
@@ -30,5 +33,5 @@ Mostrar todos |
   <% end %>
 </table>
 
-<b>Total:</b> <%=@interviews.count%>
+
 <p><%= link_to "Criar nova", new_interview_path %></p>
