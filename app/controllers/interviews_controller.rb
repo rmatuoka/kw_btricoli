@@ -95,7 +95,7 @@ class InterviewsController < ApplicationController
       @filtro_bairro = params[:bairro] if !params[:bairro].blank?
     end
     
-    @reports = Interview.all(:conditions => ["ausente = true AND bairro LIKE ?", @filtro_bairro], :order => "bairro ASC")
+    @reports = Interview.all(:conditions => ["ausente = true AND bairro LIKE ?", @filtro_bairro], :order => "bairro, endereco ASC")
     
     respond_to do |format|
         format.html
