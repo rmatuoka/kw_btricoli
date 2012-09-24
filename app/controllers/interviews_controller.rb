@@ -263,12 +263,12 @@ class InterviewsController < ApplicationController
     
     #QUESTAO 5
     @total_positivo = Interview.sum(:positivo, :conditions => ["bairro LIKE ?", @filtro_bairro]).to_f
-    @total_negativo = Interview.count(:conditions => ['positivo != "" OR positivo = 0 AND bairro LIKE ?', @filtro_bairro]).to_f
+    @total_negativo = Interview.count(:conditions => ['positivo = 0 AND bairro LIKE ?', @filtro_bairro]).to_f
     
     @total_final5 = @total_positivo + @total_negativo
     
     @perc_positivo = (@total_final5 != 0) ? ((@total_positivo / @total_final5) * 100).round(2) : 0
-    @perc_negativo = (@total_final5 != 0) ? ((@total_negativo / @total_negativo) * 100).round(2) : 0
+    @perc_negativo = (@total_final5 != 0) ? ((@total_negativo / @total_final5) * 100).round(2) : 0
     
     respond_to do |format|
         format.html
