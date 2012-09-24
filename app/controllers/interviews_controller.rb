@@ -1,4 +1,6 @@
 class InterviewsController < ApplicationController
+  before_filter :autentica
+  
   def index
     @interviews = Interview.all
   end
@@ -262,7 +264,7 @@ class InterviewsController < ApplicationController
     @perc_naorespondeu = (@total_final4 != 0) ? ((@total_naorespondeu / @total_final4) * 100).round(2) : 0
     
     #QUESTAO 5
-    @total_positivo = Interview.sum(:positivo, :conditions => ["bairro LIKE ?", @filtro_bairro]).to_f
+    @total_positivo = Interview.count(:conditions => ["positivo = 1 AND bairro LIKE ?", @filtro_bairro]).to_f
     @total_negativo = Interview.count(:conditions => ['positivo = 0 AND bairro LIKE ?', @filtro_bairro]).to_f
     
     @total_final5 = @total_positivo + @total_negativo
