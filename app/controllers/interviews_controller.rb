@@ -5,6 +5,10 @@ class InterviewsController < ApplicationController
     @interviews = Interview.all
   end
   
+  def todas
+    @interviews = Interview.all
+  end
+  
   def ausentes
     @interviews = Interview.all(:conditions => ['ausente = true'])
   end

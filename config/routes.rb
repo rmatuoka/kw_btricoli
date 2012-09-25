@@ -12,6 +12,8 @@ KwBtricoli::Application.routes.draw do
       post 'indecisos'
       get 'negativos'
       post 'negativos'
+      get 'todas'
+      post 'todas'
     end
   end
   resources :cards

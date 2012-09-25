@@ -1,0 +1,38 @@
+<% title "Interviews" %>
+
+Mostrar todos | 
+<%=link_to "Mostrar ausentes", ausentes_interviews_path%> | 
+<%=link_to "Resumo", reports_interviews_path%> |
+<%=link_to "Relatório de ausentes por bairro", report_ausentes_interviews_path%> | 
+<%=link_to "Relatório de indecisos por bairro", indecisos_interviews_path%>|
+<%=link_to "Relatório de negativos por bairro", negativos_interviews_path%>
+
+<br><br>
+
+<p><%= link_to "Criar nova", new_interview_path %></p>
+
+<br><br>
+<b>Total:</b> <%=@interviews.count%>
+<br><br>
+<table>
+  <tr>
+    <th>Entrevistador</th>
+    <th>Data</th>
+    <th>Ausente</th>
+    <th>Recusou</th>
+    
+  </tr>
+  <% for interview in @interviews %>
+    <tr>
+      <td><%= interview.entrevistador %></td>
+      <td><%= interview.data %></td>
+      <td><%= interview.ausente %></td>
+      <td><%= interview.recusou %></td>
+      <td><%= link_to "Mostrar/Editar", edit_interview_path(interview) %></td>
+      <td><%= link_to "Deletar", interview, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<p><%= link_to "Criar nova", new_interview_path %></p>
