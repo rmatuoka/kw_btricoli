@@ -8,6 +8,14 @@
     <%= f.label :data, "Data da Entrevista" %><br />
     <%= f.date_select :data %>
   </p>
+<p>
+    <%= f.label :retorno, "Retorno?" %><br />
+    <%= f.check_box :retorno %>
+  </p>
+  <p>
+    <%= f.label :retorno_ausente, "Retorno Ausente?" %><br />
+    <%= f.check_box :retorno_ausente %>
+  </p>
   <p>
     <%= f.label :ausente, "Ausente?" %><br />
     <%= f.check_box :ausente %>

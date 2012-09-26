@@ -12,26 +12,55 @@ Mostrar todos |
 <p><%= link_to "Criar nova", new_interview_path %></p>
 
 <br><br>
+
+<h2>Filtros</h2>
+<%=form_tag "/interviews/todas", :method => :get%>
+	<label>Ausentes:</label>
+	<%=select_tag ("ausente", options_for_select([["Todos",""],["Sim","1"],["Não","0"]]))%>
+	
+	<label>Retorno:</label>
+	<%=select_tag ("retorno", options_for_select([["Todos",""],["Sim","1"],["Não","0"]]))%>
+	
+	<label>Retorno ausente?:</label>
+	<%=select_tag ("retorno_ausente", options_for_select([["Todos",""],["Sim","1"],["Não","0"]]))%>
+	
+	<%#= collection_select nil, :bairro, @bairros, :bairro, :bairro,{:size=>"10"} %>
+	<br /><br />
+	<%=submit_tag "Filtrar"%>
+	<br />
+</form>
+
+<br /><br />
+
 <b>Total:</b> <%=@interviews.count%>
 <br><br>
 <table>
   <tr>
+	<th>Nº</th>
     <th>Entrevistador</th>
     <th>Data</th>
     <th>Ausente</th>
     <th>Recusou</th>
-    
+	<th>Retorno</th>
+    <th>Retorno Ausente</th>
   </tr>
-  <% for interview in @interviews %>
+  <% 
+	$counter = 1
+	for interview in @interviews %>
     <tr>
+	<td><%= $counter %></td>
       <td><%= interview.entrevistador %></td>
       <td><%= interview.data %></td>
       <td><%= interview.ausente %></td>
       <td><%= interview.recusou %></td>
+	  <td><%= interview.retorno %></td>
+	  <td><%= interview.retorno_ausente %></td>
       <td><%= link_to "Mostrar/Editar", edit_interview_path(interview) %></td>
       <td><%= link_to "Deletar", interview, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
-  <% end %>
+  <% 
+	$counter = $counter + 1
+	end %>
 </table>
 
 

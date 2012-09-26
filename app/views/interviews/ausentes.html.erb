@@ -15,6 +15,8 @@ Mostrar ausentes |
     <th>Data</th>
     <th>Ausente</th>
     <th>Recusou</th>
+	<th>Retorno?</th>
+	<th>Retorno Ausente?</th>
     
   </tr>
   <% for interview in @interviews %>
@@ -23,6 +25,8 @@ Mostrar ausentes |
       <td><%= interview.data %></td>
       <td><%= interview.ausente %></td>
       <td><%= interview.recusou %></td>
+	  <td><%= interview.retorno %></td>
+	  <td><%= interview.retorno_ausente %></td>
       <td><%= link_to "Mostrar/Editar", edit_interview_path(interview) %></td>
       <td><%= link_to "Deletar", interview, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

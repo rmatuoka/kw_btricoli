@@ -2,11 +2,22 @@ class InterviewsController < ApplicationController
   before_filter :autentica
   
   def index
-    @interviews = Interview.all
+    @interviews = Interview.all.count
   end
   
   def todas
-    @interviews = Interview.all
+    @filtro_ausente = 'ausente IS NOT NULL'
+    
+    if params[:utf8] != nil
+      
+      @filtro_ausente += (' AND ausente = ' + params[:ausente]) if !params[:ausente].blank?
+      
+      @filtro_ausente += (' AND retorno = ' + params[:retorno]) if !params[:retorno].blank?
+      
+      @filtro_ausente += (' AND retorno_ausente = ' + params[:retorno_ausente]) if !params[:retorno_ausente].blank?
+    end
+    
+    @interviews = Interview.all(:conditions => [@filtro_ausente])
   end
   
   def ausentes
