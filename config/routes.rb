@@ -14,6 +14,8 @@ KwBtricoli::Application.routes.draw do
       post 'negativos'
       get 'todas'
       post 'todas'
+      get 'telefones'
+      post 'telefones'
     end
   end
   resources :cards

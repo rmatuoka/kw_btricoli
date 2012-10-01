@@ -4,7 +4,8 @@
 <%=link_to "Motrar ausentes", ausentes_interviews_path%> | 
 <%=link_to "Resumo", reports_interviews_path%> |
 <%=link_to "Relatório de ausentes por bairro", report_ausentes_interviews_path%> | 
-Relatório de indecisos por bairro
+Relatório de indecisos por bairro | 
+<%=link_to "Relatório de telefones por intenção de voto", telefones_interviews_path%>
 <br><br>
 <h2>Filtros</h2>
 <%=form_tag "/interviews/negativos", :method => :get%>

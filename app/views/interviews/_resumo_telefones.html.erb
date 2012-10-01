@@ -1,0 +1,22 @@
+
+<%@reports.each do |r|%>
+	Data: <%=r.data%><br />
+	Entrevistador: <%=r.entrevistador%><br />
+	Bairro: <%=r.bairro%><br />
+	Endereço: <%=r.endereco%><br />
+	Telefone: <%=r.telefone%><br />
+	Mensagem: <%=r.mensagem_5%><br />
+	Intenção de voto:
+	<b>
+	<%="Luiz Fernando" if r.luiz_4 == 1%>
+	<%="Wanderley" if r.wanderley_4 == 1%>
+	<%="Saulo" if r.saulo_4 == 1%>
+	<%="Nulo/Branco" if r.nulo_4 == 1%>
+	<%="Indeciso" if r.indeciso_4 == 1%>
+	<%="Não Respondeu" if r.naorespondeu_4 == 1%>
+	</b>
+	<hr>
+<%end%>
+
+<strong>Total</strong>: 
+<%=@reports.count%>

@@ -61,6 +61,59 @@ class InterviewsController < ApplicationController
     redirect_to interviews_url, :notice => "Item deletado com sucesso."
   end
   
+  def telefones
+    @filtro_telefones = "mensagem_5 IS NOT NULL" 
+    
+    if params[:utf8] != nil
+      
+      
+      if !params[:intencao].blank?
+        puts "a"
+        case params[:intencao].to_i
+          when 1
+            #LUIZ FERNANDO
+            @filtro_telefones += (' AND (luiz_4 = 1)')
+            puts "b"
+          when 2
+            #INDECISOS
+            @filtro_telefones += (' AND (indeciso_4 = 1)')
+          when 3
+            #NULO E BRANCO
+            @filtro_telefones += (' AND (nulo_4 = 1 AND naorespondeu_4 = 1)')
+          when 4
+            #OUTROS CANDIDATOS
+            @filtro_telefones += (' AND (saulo_4 = 1 OR wanderley_4 = 1 OR arthur_4 = 1) ')
+        end
+        
+      end
+      
+    end
+    
+    @reports = Interview.all(:conditions => [@filtro_telefones])
+    
+    respond_to do |format|
+        format.html
+        format.pdf do
+          
+          d = DateTime.now.strftime("%d-%m-%Y")
+          render  :pdf => "Pesquisa", 
+                  :template => "/interviews/telefones.pdf.erb",
+                  :show_as_html => params[:debug].present?,
+                  :margin => {:top                => 15,                     # default 10 (mm)
+                              :bottom             => 15,
+                              :left               => 10,
+                              :right              => 10},                  
+                  :page_size => 'A4'#,
+                 # :header => {:html => { :template => '/static_content/denied.html.erb',  # use :template OR :url      # optional, use 'pdf_plain.html' for a pdf_plain.html.erb file, defaults to main layout
+                  #                       :url      => 'www.example.com',
+                   #                      :locals   => { :foo => @bar }
+                    #                   },
+                     #         }                  
+                  
+        end
+    end
+  end
+  
   def negativos
     #FILTROS
     @breadcrumb = "Todos o bairros"

@@ -1,0 +1,30 @@
+<% title "Relatório de Telefones" %>
+
+<%=link_to "Motrar todos", todas_interviews_path%> | 
+<%=link_to "Motrar ausentes", ausentes_interviews_path%> | 
+<%=link_to "Resumo", reports_interviews_path%> |
+<%=link_to "Relatório de ausentes por bairro", report_ausentes_interviews_path%> | 
+<%=link_to "Relatório de indecisos por bairro", indecisos_interviews_path%>|
+Relatório de telefones por intenção de voto
+<br><br>
+<h2>Filtros</h2>
+<%=form_tag "/interviews/telefones", :method => :get%>
+	<label>Intenção de voto:</label>
+	<%=select_tag("intencao", options_for_select([["Todos",""],["Luiz Fernando","1"],["Indecisos","2"],["Nulo/Branco","3"],["Outros Candidatos","4"]]))%>
+	<br /><br />
+	<%=submit_tag "Filtrar"%>
+	<br />
+</form>
+
+<br /><br />
+
+<%=form_tag "/interviews/telefones.pdf", :method => :get, :target=> "_blank"%>
+	<%=hidden_field_tag :intencao, params[:intencao]%>
+	<%=submit_tag "Gerar PDF"%>
+</form>
+
+<br /><br />
+
+<%=render :file => "/interviews/_resumo_telefones.html.erb"%>
+
+<p><%= link_to "Voltar", interviews_path %></p>
